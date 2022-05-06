@@ -20,7 +20,7 @@ public class T1_CydeoVerification {
         String actualURL = driver.getCurrentUrl();
         System.out.println("actualURL = " + actualURL);
 
-        if(actualURL.equals(expectedURL)){
+        if(actualURL.contains(expectedURL)){
             System.out.println("url verification passed");
         }else{
             System.out.println("url verification failed");
@@ -42,7 +42,7 @@ public class T1_CydeoVerification {
 
 
 
-
+driver.close();
 
     }
 }
