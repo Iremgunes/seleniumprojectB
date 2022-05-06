@@ -14,8 +14,10 @@ public class BasicNavigations  {
         //2- cretae instance of the selenium web driver
         WebDriver driver = new ChromeDriver();
 
-        //3- go to tesla.com
+        // this line maximize the browser size
+        driver.manage().window().maximize();
 
+        //3- go to tesla.com
         driver.get("https://www.tesla.com");
 
         String currentTitle = driver.getTitle();
@@ -52,8 +54,14 @@ public class BasicNavigations  {
         currentTitle = driver.getTitle();
         System.out.println("currentTitle = " + currentTitle);
 
-         currentURL = driver.getCurrentUrl();
+        currentURL = driver.getCurrentUrl();
         System.out.println("currentURL = " + currentURL);
+
+// this will close the currently opened window
+        driver.close();
+
+        //this will close all of the opened windows
+        driver.quit();
 
 
 
