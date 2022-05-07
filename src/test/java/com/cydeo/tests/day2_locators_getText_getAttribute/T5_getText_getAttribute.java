@@ -31,11 +31,18 @@ public class T5_getText_getAttribute {
 
         String expectedPlaceHolder = "first name";
 
-        String actualPlaceHolder = firstNameInput.getAttribute();
+        String actualPlaceHolder = firstNameInput.getAttribute("placeholder");
 
         System.out.println("actualPlaceHolder = " + actualPlaceHolder);
 
+        if(actualPlaceHolder.equals(expectedPlaceHolder)){
+            System.out.println("place holder verification passed");
+        }else{
+            System.out.println("place holder verification failed");
+        }
 
+
+        driver.close();
 
 
 
