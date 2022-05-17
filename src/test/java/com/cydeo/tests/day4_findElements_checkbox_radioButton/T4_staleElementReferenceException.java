@@ -32,5 +32,10 @@ public class T4_staleElementReferenceException {
 
         cydeoLink = driver.findElement(By.xpath("//a[text()='CYDEO']"));
         System.out.println("cydeoLink.isDisplayed() =" + cydeoLink.isDisplayed());
+
+
+
+        driver.close();
+
     }
 }
