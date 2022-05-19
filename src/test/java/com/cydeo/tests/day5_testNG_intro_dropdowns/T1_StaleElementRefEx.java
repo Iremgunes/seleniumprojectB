@@ -2,6 +2,7 @@ package com.cydeo.tests.day5_testNG_intro_dropdowns;
 
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -25,12 +26,22 @@ public class T1_StaleElementRefEx {
 
        //4. Verify “Delete” button is displayed after clicking.
         WebElement deleteButton = driver.findElement(By.xpath("//button[@class='added-manually']"));
+        System.out.println("deleteButton.isDisplayed() =" + deleteButton.isDisplayed());
 
+       //5. Click to “Delete” button.
+        Thread.sleep(2000);
+        deleteButton.click();
 
-
-//5. Click to “Delete” button.
 //6. Verify “Delete” button is NOT displayed after clicking.
 
+
+        try {
+            System.out.println("deleteButton.isDisplayed() = " + deleteButton.isDisplayed());
+        } catch(StaleElementReferenceException e){
+            System.out.println("----> stale element reference exception");
+            System.out.println("----> this means the web element is completely deleted from the page");
+            System.out.println(" deleteButton.isDisplayed() = false");
+        }
 
 
 
