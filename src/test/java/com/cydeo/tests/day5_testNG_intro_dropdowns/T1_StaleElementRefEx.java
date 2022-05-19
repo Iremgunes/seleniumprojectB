@@ -43,6 +43,8 @@ public class T1_StaleElementRefEx {
             System.out.println(" deleteButton.isDisplayed() = false");
         }
 
+        driver.close();
+
 
 
     }
