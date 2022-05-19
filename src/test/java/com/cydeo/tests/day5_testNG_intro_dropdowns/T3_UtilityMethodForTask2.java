@@ -43,6 +43,8 @@ public class T3_UtilityMethodForTask2 {
 
 
 
+        driver.close();
+
 
 
 
