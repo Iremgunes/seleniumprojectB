@@ -4,6 +4,7 @@ import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -11,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class DropDownPractices2 {
 
     @Test
-    public void task_6(){
+    public void task_6() throws InterruptedException {
         //1. Open Chrome browser
         //2. Go to https://practice.cydeo.com/dropdown
 
@@ -35,6 +36,24 @@ public class DropDownPractices2 {
 
         Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
         dayDropdown.selectByIndex(0);
+
+        Thread.sleep(3000);
+
+        String expectedYear = "1923";
+        String expectedManth = "December";
+        String expectedDay = "1";
+
+        String actualYear = yearDropdown.getFirstSelectedOption().getText();
+        String actualMonth = monthDropdown.getFirstSelectedOption().getText();
+        String actualDay = dayDropdown.getFirstSelectedOption().getText();
+
+
+
+        Assert.assertTrue(actualYear.equals(expectedYear));
+        Assert.assertEquals(actualMonth, expectedManth);
+        Assert.assertEquals(actualDay, expectedDay);
+
+        driver.close();
 
 
 
