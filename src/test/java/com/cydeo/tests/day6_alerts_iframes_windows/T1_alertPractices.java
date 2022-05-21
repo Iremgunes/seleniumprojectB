@@ -56,7 +56,19 @@ public class T1_alertPractices {
     }
 
     @Test
-    public void task_2(){
+    public void task_2() throws InterruptedException {
+
+        Thread.sleep(2000);
+
+       // WebElement jsAlertButton = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
+    //   jsAlertButton.click();
+
+
+     //   Alert alert = driver.switchTo().alert();
+        Thread.sleep(2000);
+
+        //4. Click to OK button from the alert
+     //   alert.accept();
 
     }
 
