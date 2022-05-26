@@ -3,6 +3,8 @@ package com.cydeo.utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.Set;
+
 public class ReviewUtils {
     public static void staticWait(int seconds){
         try{
@@ -19,6 +21,18 @@ public class ReviewUtils {
         driver.findElement(By.partialLinkText(link)).click();
         staticWait(1);
 
+    }
+
+    public static void windowHandle(WebDriver driver, String pickDateWindowTitle) {
+
+        Set<String> windowHandles = driver.getWindowHandles();
+        for (String each : windowHandles) {
+            driver.switchTo().window(each);
+
+            if (driver.getTitle().equals(pickDateWindowTitle)) {
+                break;
+            }
+        }
     }
 
 }

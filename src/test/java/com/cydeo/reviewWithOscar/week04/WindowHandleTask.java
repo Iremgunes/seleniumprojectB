@@ -26,7 +26,7 @@ public class WindowHandleTask {
 
         System.out.println("windowHandles = " + windowHandles);
 
-       //get your cureent window handle
+        //get your cureent window handle
         String mainWindowHandle = driver.getWindowHandle();
 
         // to switch to window which we are not at
@@ -45,8 +45,10 @@ public class WindowHandleTask {
         driver.switchTo().window(mainWindowHandle);
 
 
+
        WebElement pmButton = driver.findElement(By.xpath("(//input[@name='StartingTimeAMPM'])[2]"));
        pmButton.click();
+        ReviewUtils.staticWait(2);
 
         Assert.assertTrue(pmButton.isSelected());
 
