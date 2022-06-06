@@ -35,6 +35,10 @@ public class Driver {
              */
             String browserType = ConfigurationReader.getProperty("browser");
 
+            /*
+            depending on the browserType taht will be return from configuration.properties file
+            switch statement will determine the case, and open the matching browser
+             */
             switch (browserType){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
@@ -48,11 +52,9 @@ public class Driver {
                     driver = new FirefoxDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+                    break;
 
             }
-
-
         }
         return driver;
     }
