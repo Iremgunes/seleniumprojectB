@@ -58,5 +58,15 @@ public class Driver {
         }
         return driver;
     }
+    /*
+    this method make sure our driver value is
+    always null after using quit() method
+     */
+    public static void closeDriver(){
+        if(driver != null){
+            driver.quit();
+            driver = null;
+        }
+    }
 
 }
