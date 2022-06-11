@@ -6,6 +6,7 @@ import com.cydeo.utilities.ReviewUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -35,7 +36,7 @@ public class WaitExamples {
     //4. Then handle the Javascript alert
 
     @Test
-    public void example_tasks(){
+    public void test_1(){
 
         page.alertActivate.click();
         wait.until(ExpectedConditions.alertIsPresent());
@@ -43,6 +44,13 @@ public class WaitExamples {
         alert.accept();
 
 
+    }
+
+    @Test
+    public void test_2(){
+        page.enable.click();
+        wait.until(ExpectedConditions.elementToBeClickable(page.disable));
+        Assert.assertTrue(page.disable.isEnabled(), "Button has NOT been enabled YET!");
 
 
     }

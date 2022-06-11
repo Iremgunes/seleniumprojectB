@@ -14,6 +14,12 @@ public class WaitTaskPage {
     @FindBy(xpath = "//button[@id='alert']")
     public WebElement alertActivate;
 
+    @FindBy(id = "enable-button")
+    public WebElement enable ;
+
+    @FindBy(id = "disable")
+    public WebElement disable;
+
 
 
 
