@@ -17,6 +17,24 @@ public class ContactUsPage extends BasePage {
     @FindBy(id="message")
     public WebElement message;
 
+    @FindBy(name="upload_file")
+    public WebElement uploadFile;
+
+    @FindBy(name = "submit")
+    public WebElement submit;
+
+    @FindBy(xpath = "//div[@class='status alert alert-success']")
+    public WebElement success;
+
+    @FindBy(xpath = " (//a[@href='/'])[2]")
+    public  WebElement home;
+
+    @FindBy(xpath = "//a[@href='/products']")
+    public WebElement products;
+
+
+
+
 
 
 
