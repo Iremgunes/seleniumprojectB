@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DropDownTask {
@@ -28,10 +29,28 @@ public class DropDownTask {
         WebElement dropdownElement = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));
 
         Select dropDown = new Select(dropdownElement);
+        String expectedValue = "MyMoney";
+        String actualValue = dropDown.getFirstSelectedOption().getText();
 
-        dropDown.selectByIndex(0);
+        Assert.assertEquals(actualValue,expectedValue);
 
-    }
+        dropDown.selectByIndex(1);
+
+Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity")).sendKeys("2");
+
+Driver.getDriver().findElement(By.xpath("//input[@value='Calculate']")).click();
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 }
