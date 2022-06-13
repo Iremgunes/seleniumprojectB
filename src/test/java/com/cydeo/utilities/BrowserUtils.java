@@ -6,9 +6,13 @@ that are not related to some specific page.
  */
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class BrowserUtils {
 
@@ -58,6 +62,13 @@ public class BrowserUtils {
 
     public static void verifyTitle(WebDriver driver, String expectedTitle){
         Assert.assertEquals(driver.getTitle(), expectedTitle);
+    }
+
+    public static void waitForInvisibilityOf(WebElement webElement){
+        Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        wait.until(ExpectedConditions.invisibilityOf(webElement));
+
     }
 
 
